@@ -1,0 +1,60 @@
+
+<body>
+    <h1 class="title-pages">Consultar - Consulta de Potenciais Clientes</h1>
+    <p class="exp-pages">Sistema utilizado para agendamento de serviços</p>
+    
+    <!--Pesquisar cliente-->
+        <form action="/search" method="GET" class="formPesquisar">
+
+                <div class="formPesquisar-body">
+                    <label for="Id" class="form-label">Quer encontrar um cliente especifico? <b>Digite o ID correspondente:</b> </label>
+
+
+                     <div class="row">
+                        <div class="col">
+                            <input type="number" class="form-control"  name="id" id="id">
+                        </div>
+                        <div class="col">
+                            <button type="submit">Buscar</button>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                
+        </form>
+    <!--Fim do Pesquisar cliente-->
+
+    <table class="table table-bordered border-primary">
+        <thead>
+            <tr class="tableTitles-pages">
+                <th scope="col">ID</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Telefone</th>
+                <th scope="col">Origem</th>
+                <th scope="col">Data de Contato</th>
+                <th scope="col">Observação</th>
+                <th scope="col">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each clientes}} 
+                <tr class="tableInformation-pages">
+                    <td>{{this.id}}</td>
+                    <td>{{this.nome}}</td> 
+                    <td>{{this.telefone}}</td> 
+                    <td>{{this.origem}}</td> 
+                    <td>{{this.dt_contato}}</td> 
+                    <td id="tdObservacao-pages">{{this.observacao}}</td> 
+                    <td>
+                        <a href="/edit/{{this.id}}">Editar</a><br>
+                        <form action="/delete/{{this.id}}" method="POST">
+                            <button type="submit">Deletar</button>
+                        </form>
+                    </td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
+</body>

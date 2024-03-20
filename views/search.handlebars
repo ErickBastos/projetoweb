@@ -1,0 +1,32 @@
+<body>
+    <table class="table table-bordered border-primary">
+        <thead>
+            <tr class="tableTitles-pages">
+                <th scope="col">ID</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Telefone</th>
+                <th scope="col">Origem</th>
+                <th scope="col">Data de Contato</th>
+                <th scope="col">Observação</th>
+                <th scope="col">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr  class="tableInformation-pages">
+                    <td>{{cliente.dataValues.id}}</td>
+                    <td>{{cliente.dataValues.nome}}</td> 
+                    <td>{{cliente.dataValues.telefone}}</td> 
+                    <td>{{cliente.dataValues.origem}}</td> 
+                    <td>{{cliente.dataValues.dt_contato}}</td> 
+                    <td id="tdObservacao-pages">{{cliente.dataValues.observacao}}</td> 
+                    <td>
+                        <a href="/edit/{{cliente.dataValues.id}}">Editar</a><br>
+                        <form action="/delete/{{cliente.dataValues.id}}" method="POST">
+                            <button type="submit">Deletar</button>
+                        </form>
+                    </td>
+                </tr>
+        </tbody>
+    </table>
+</body>
+

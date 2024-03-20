@@ -1,0 +1,51 @@
+<body>
+    <form action="/edited/{{cliente.dataValues.id}}" method="POST" class="formCreate-Edit"> <!-- Corrigido para acessar o ID do cliente -->
+        
+        <!--Campo ID-->
+            <div class="mb-3">
+                <label for="id" class="form-label">Id: </label>
+                <input type="number" class="form-control" name="id" value="{{cliente.dataValues.id}}" disabled>
+            </div>
+        <!--Fim do campo ID-->
+
+        <!--Campo nome-->
+            <div class="mb-3">
+                <label for="Nome" class="form-label">Nome: </label>
+                <input type="text" class="form-control"  name="nome" id="nome" value="{{cliente.dataValues.nome}}">
+            </div>
+        <!--Fim do Campo nome-->
+
+        <!--Campo Telefone-->
+            <div class="mb-3">
+                <label for="Telefone" class="form-label">Telefone: </label>
+                <input type="text" class="form-control"  name="telefone" id="telefone" placeholder="+XX XX XXXXX-XXXX" value="{{cliente.dataValues.telefone}}">
+            </div>
+        <!--Fim do Campo Telefone-->
+
+        <!--Campo Origem-->
+            <div class="mb-3">
+                <label for="Origem" class="form-label">Origem: </label>
+                <input type="text" class="form-control"  name="origem" id="origem" value="{{cliente.dataValues.origem}}">
+            </div>
+        <!--Fim do Campo Origem-->  
+
+        <!--Campo Data de Contato-->
+            <div class="mb-3">
+                <label for="dt_contato" class="form-label">Data de Contato:</label><br>
+                <input type="date" name="dt_contato" id="dt_contato" value="{{cliente.dataValues.dt_contato}}">
+            </div>
+        <!--Fim do Campo Data de contato-->
+
+        <!--Campo Observação-->
+            <div class="mb-3">
+                <label for="Observação" class="form-label">Observação:</label>
+                <textarea class="form-control"name="observacao" id="observacao" rows="3">{{cliente.dataValues.observacao}}</textarea>
+            </div>
+        <!--Fim do Campo Observação-->
+
+        <button type="submit">Atualizar</button>
+
+        
+        
+    </form>
+</body>
